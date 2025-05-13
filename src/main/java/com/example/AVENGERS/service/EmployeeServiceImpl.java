@@ -99,39 +99,27 @@ public class EmployeeServiceImpl implements EmployeeService {
 	@Override
 	public List<Employee> getAllEmployeesBySalary(float employeeSalary) {
 		List<Employee> allEmployees = employeeRepository.findAll();
-
-		List<Employee> listEmployees = allEmployees.stream().filter(e -> e.getEmployeeSalary() >= employeeSalary).collect(Collectors.toList());
-	
-		return listEmployees;
+		return allEmployees.stream().filter(e -> e.getEmployeeSalary() >= employeeSalary).collect(Collectors.toList());
 	}
 	
 	@Override
 	public List<Employee> getAllEmployeesByEmployeeNameLength(int length) {
 		List<Employee> allEmployees = employeeRepository.findAll();
-
-		List<Employee> listEmployees1 = allEmployees.stream().filter(e -> e.getEmployeeName().length() == length).collect(Collectors.toList());
-	
-		return listEmployees1;
-	}
-	
+		return allEmployees.stream().filter(e -> e.getEmployeeName().length() == length).collect(Collectors.toList());
+	}	
 	
 	public List<Employee> getAllEmployeesByEmployeeNameOddLength() {
 		List<Employee> allEmployees = employeeRepository.findAll();
-
-		List<Employee> listEmployees1 = allEmployees.stream().filter(e -> e.getEmployeeName().length()  % 2 != 0).collect(Collectors.toList());
-	
-		return listEmployees1;
+		return allEmployees.stream().filter(e -> e.getEmployeeName().length() % 2 != 0).collect(Collectors.toList());
 	}
 	
 	public List<Employee> getAllEmployeesByEmployeeNameEvenLength() {
 		List<Employee> allEmployees = employeeRepository.findAll();
-		List<Employee> listEmployees1 = allEmployees.stream().filter(e -> e.getEmployeeName().length()  % 2 == 0).collect(Collectors.toList());	
-		return listEmployees1;
+		return allEmployees.stream().filter(e -> e.getEmployeeName().length()  % 2 == 0).collect(Collectors.toList());	
 	}
 	
 	public List<String> getAllEmployeeNames() {
 		List<Employee> allEmployees = employeeRepository.findAll();
-		List<String> listEmployees1 = allEmployees.stream().map(e -> e.getEmployeeName()).collect(Collectors.toList());	
-		return listEmployees1;
+		return allEmployees.stream().map(e -> e.getEmployeeName()).collect(Collectors.toList());	
 	}
 }

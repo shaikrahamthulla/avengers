@@ -21,5 +21,7 @@ public interface EmployeeService {
 	List<Employee> getAllEmployeesByEmployeeNameLength(int length);
 	
 	List<Employee> getAllEmployeesByEmployeeNameOddLength();
+	
+	List<Employee> getAllEmployeesByEmployeeNameEvenLength();
 }
 

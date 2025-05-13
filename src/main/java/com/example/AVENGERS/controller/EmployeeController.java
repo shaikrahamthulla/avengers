@@ -73,5 +73,10 @@ public class EmployeeController {
 	public List<Employee> getAllEmployeesByEmployeeNameEvenLength() {
 		return employeeService.getAllEmployeesByEmployeeNameEvenLength();
 	}
+	
+	@GetMapping("/employeesNames")
+	public List<String> getAllEmployeeNames() {
+		return employeeService.getAllEmployeeNames();
+	}
 
 }

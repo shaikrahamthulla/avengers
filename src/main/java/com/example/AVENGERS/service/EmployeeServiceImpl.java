@@ -26,9 +26,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 	@Override
 	public List<Employee> fetchAllEmployees() {
-		List<Employee> allEmployees = employeeRepository.findAll();
-
-	
+		List<Employee> allEmployees = employeeRepository.findAll();	
 		return allEmployees;
 	}
 	@Override
@@ -127,9 +125,13 @@ public class EmployeeServiceImpl implements EmployeeService {
 	
 	public List<Employee> getAllEmployeesByEmployeeNameEvenLength() {
 		List<Employee> allEmployees = employeeRepository.findAll();
-
-		List<Employee> listEmployees1 = allEmployees.stream().filter(e -> e.getEmployeeName().length()  % 2 == 0).collect(Collectors.toList());
+		List<Employee> listEmployees1 = allEmployees.stream().filter(e -> e.getEmployeeName().length()  % 2 == 0).collect(Collectors.toList());	
+		return listEmployees1;
+	}
 	
+	public List<String> getAllEmployeeNames() {
+		List<Employee> allEmployees = employeeRepository.findAll();
+		List<String> listEmployees1 = allEmployees.stream().map(e -> e.getEmployeeName()).collect(Collectors.toList());	
 		return listEmployees1;
 	}
 }

@@ -124,4 +124,12 @@ public class EmployeeServiceImpl implements EmployeeService {
 	
 		return listEmployees1;
 	}
+	
+	public List<Employee> getAllEmployeesByEmployeeNameEvenLength() {
+		List<Employee> allEmployees = employeeRepository.findAll();
+
+		List<Employee> listEmployees1 = allEmployees.stream().filter(e -> e.getEmployeeName().length()  % 2 == 0).collect(Collectors.toList());
+	
+		return listEmployees1;
+	}
 }

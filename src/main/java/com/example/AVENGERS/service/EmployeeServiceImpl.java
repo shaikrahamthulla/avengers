@@ -122,4 +122,9 @@ public class EmployeeServiceImpl implements EmployeeService {
 		List<Employee> allEmployees = employeeRepository.findAll();
 		return allEmployees.stream().map(e -> e.getEmployeeName()).collect(Collectors.toList());	
 	}
+	
+	public List<Float> getAllEmployeeSalaries() {
+		List<Employee> allEmployees = employeeRepository.findAll();
+		return allEmployees.stream().map(e -> e.getEmployeeSalary()).collect(Collectors.toList());	
+	}
 }

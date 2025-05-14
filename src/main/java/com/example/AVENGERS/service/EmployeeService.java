@@ -25,5 +25,7 @@ public interface EmployeeService {
 	List<Employee> getAllEmployeesByEmployeeNameEvenLength();
 	
 	List<String> getAllEmployeeNames();
+	
+	List<Float> getAllEmployeeSalaries();
 }
 

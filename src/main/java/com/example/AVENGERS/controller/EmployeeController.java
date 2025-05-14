@@ -83,5 +83,10 @@ public class EmployeeController {
 	public List<Float> getAllEmployeeSalaries() {
 		return employeeService.getAllEmployeeSalaries();
 	}
+	
+	@GetMapping("/employeesIds")
+	public List<Long> getAllEmployeesIds() {
+		return employeeService.getAllEmployeesIds();
+	}
 
 }

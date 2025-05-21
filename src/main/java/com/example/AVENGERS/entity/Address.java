@@ -10,6 +10,10 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "addresses")
 public class Address {
+	
+	public Address() {
+		
+	}
 
 	public Address(String street, String city, String state, String country, String zipCode) {
 
